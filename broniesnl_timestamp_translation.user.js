@@ -51,5 +51,5 @@ function processTextNode(textNode){
     //Now we have the date, now turn it into something readable.
     //textNode.nodeValue = myDate.toLocaleString();
     textNode.nodeValue = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
-    + " " + myDate.getFullYear() + " " + ((myDate.getHours()>10)?"0"+myDate.getHours():myDate.getHours()) + ":" + ((myDate.getMinutes()>10)?"0"+myDate.getMinutes():myDate.getMinutes());
+    + " " + myDate.getFullYear() + " " + ((myDate.getHours()<10)?"0"+myDate.getHours():myDate.getHours()) + ":" + ((myDate.getMinutes()<10)?"0"+myDate.getMinutes():myDate.getMinutes());
 }
