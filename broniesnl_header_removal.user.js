@@ -7,6 +7,7 @@
 // @match        http://bronies.nl/*
 // @grant        none
 // @updateURL    https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_header_removal.user.js
+// @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_header_removal.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
