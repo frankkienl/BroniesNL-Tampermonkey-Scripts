@@ -6,6 +6,8 @@
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
 // @grant        none
+// @updateURL    https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_signature_removal.user.js
+// @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
 // Github-link: https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_signature_removal.user.js
