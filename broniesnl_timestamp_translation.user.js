@@ -1,35 +1,44 @@
 // ==UserScript==
 // @name         BroniesNL - Timestamp translation
 // @namespace    http://frankkie.nl/
-// @version      0.1
+// @version      0.2
 // @description  Translate timestamps on the subforum-screen
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
+// @match        http://bronies.nl/e107_plugins/forum/forum.php*
+// @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
 // @grant        none
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_timestamp_translation.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
-var tables = document.querySelectorAll('table.fborder');
-var myTable = tables[1];
-var rows = myTable.getElementsByTagName('tr');
+var dayNamesLongNL = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag"];
+var dayNamesShortNL = ["ma","di","wo","do","vr","za","zo"];
+var monthNamesLongNL = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
+var monthNamesShortNL = ["jan", "feb", "maa", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
 
-for (var i=1; i<rows.length; i++){
-    //intentionally skipping first one, thats the header-row.
-    var tds = rows[i].getElementsByTagName('td');
-    if (tds.length == 2){
-        //Wrong row, this is an internal table.
-        continue;
-    }    
-    processTd(tds[4]);
-    processTd(tds[7]);
+var myBody = document.querySelector('body');
+
+var textNodes = textNodesUnder(myBody);
+for (var i = 0; i < textNodes.length; i++){
+    processTextNode(textNodes[i]);
 }
 
-function processTd(myTd){
-    var timeString = myTd.childNodes[2].nodeValue;
-    console.log(timeString);    
-    //Do some String-replacing to make JavaScript like the time-format.
+function textNodesUnder(el){
+    //http://stackoverflow.com/questions/10730309/find-all-text-nodes-in-html-page
+    var n, a=[], walk=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null,false);
+    while(n=walk.nextNode()) a.push(n);
+    return a;
+}
+
+function processTextNode(textNode){
     //Example: Tue Mar 17 2015, 02:18PM
+    if (!/[A-Z][a-z][a-z]\s[A-Z][a-z][a-z]\s\d*\s\d*,\s\d\d:\d\d[A-Z][A-Z]/.test(textNode.nodeValue)){
+        //Not what we're looking for        
+        return;
+    }
+    var timeString = /[A-Z][a-z][a-z]\s[A-Z][a-z][a-z]\s\d*\s\d*,\s\d\d:\d\d[A-Z][A-Z]/.exec(textNode.nodeValue)[0];
+    //Do some String-replacing to make JavaScript like the time-format.
     if (/PM/.test(timeString)){
         //Contains 'PM', so do 'hours+12'
         var hours = parseInt(/, \d\d/.exec(timeString)[0].substr(2,2));
@@ -39,5 +48,8 @@ function processTd(myTd){
     timeString = timeString.replace(/PM/, "");
     timeString = timeString.replace(/AM/, "");
     var myDate = new Date(timeString);
-    myTd.childNodes[2].nodeValue = myDate.toLocaleString();
+    //Now we have the date, now turn it into something readable.
+    //textNode.nodeValue = myDate.toLocaleString();
+    textNode.nodeValue = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
+    + " " + myDate.getFullYear() + " " + myDate.getHours() + ":" + myDate.getMinutes();
 }
