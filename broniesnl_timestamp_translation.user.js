@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Timestamp translation
 // @namespace    http://frankkie.nl/
-// @version      0.2
+// @version      0.3
 // @description  Translate timestamps on the subforum-screen
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
@@ -51,5 +51,13 @@ function processTextNode(textNode){
     //Now we have the date, now turn it into something readable.
     //textNode.nodeValue = myDate.toLocaleString();
     textNode.nodeValue = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
-    + " " + myDate.getFullYear() + " " + ((myDate.getHours()<10)?"0"+myDate.getHours():myDate.getHours()) + ":" + ((myDate.getMinutes()<10)?"0"+myDate.getMinutes():myDate.getMinutes());
+    + " " + myDate.getFullYear() + " " + addZero(myDate.getHours()) + ":" + addZero(myDate.getMinutes());
+}
+
+function addZero(number){
+    if (number < 10){
+        return "0" + number;
+    } else {
+        return number;
+    }
 }
