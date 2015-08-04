@@ -10,12 +10,27 @@
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
-// Github-link: https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_signature_removal.user.js
-
-//Signatures and stuff below avatar
-var smalls = document.getElementsByClassName('smalltext');
-for (var i=0; i<smalls.length; i++){smalls[i].style.display='none';}
+//Signatures
+var sigs = document.querySelectorAll('td > span.smalltext');
+for (var i=0; i<sigs.length; i++){
+  //The first one is '<< Previous thread | Next thread >>' btw.
+  sigs[i].style.display='none';
+}
 
 //horizontal lines
 var hrs = document.getElementsByTagName('hr');
 for (var i=0; i<hrs.length;i++){hrs[i].style.display='none';}
+
+//Author-info (like number of posts, location, etc.)
+var ainfos = document.querySelectorAll('td > div.smalltext');
+for (var i=1; i<ainfos.length; i++){
+  //Intentionally skipping first one.
+  //The first one is 'Track Thread'.
+  
+  //Don't remove the submit-button in polls!
+  if (ainfos[i].getElementsByTagName('input').length!=0){
+    continue;
+  }
+  
+  ainfos[i].style.display='none';
+}
