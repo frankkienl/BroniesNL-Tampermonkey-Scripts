@@ -12,8 +12,8 @@
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
-var dayNamesLongNL = ["maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag"];
-var dayNamesShortNL = ["ma","di","wo","do","vr","za","zo"];
+var dayNamesLongNL = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
+var dayNamesShortNL = ["zo", "ma","di","wo","do","vr","za"];
 var monthNamesLongNL = ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"];
 var monthNamesShortNL = ["jan", "feb", "maa", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
 
