@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Remove Header
 // @namespace    http://frankkie.nl/
-// @version      0.1
+// @version      0.2
 // @description  Remove the huge header.
 // @author       FrankkieNL
 // @match        http://bronies.nl/*
