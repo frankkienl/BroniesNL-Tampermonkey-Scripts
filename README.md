@@ -19,3 +19,4 @@ Signature Removal
 Translate Timestamps
 =================
 [Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_timestamp_translation.user.js)
+[More info](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/blob/master/README_timestamp_translation.md)
