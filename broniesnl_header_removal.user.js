@@ -6,9 +6,9 @@
 // @author       FrankkieNL
 // @match        http://bronies.nl/*
 // @grant        none
+// @updateURL    https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_header_removal.user.js
+// @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
-
-// Github-link: https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_header_removal.user.js
 
 //Remove the huge header
 var headerDiv = document.getElementById('header');
