@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Remove Signatures
 // @namespace    http://frankkie.nl/
-// @version      0.2
+// @version      0.3
 // @description  Remove all signatures on the forum
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
