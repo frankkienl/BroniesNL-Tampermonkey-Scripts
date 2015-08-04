@@ -6,10 +6,12 @@
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
 // @grant        none
+// @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_timestamp_translation.user.js
+// @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
-var aa = document.querySelectorAll('table.fborder');
-var myTable = aa[1];
+var tables = document.querySelectorAll('table.fborder');
+var myTable = tables[1];
 var rows = myTable.getElementsByTagName('tr');
 
 for (var i=1; i<rows.length; i++){
