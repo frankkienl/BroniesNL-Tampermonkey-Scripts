@@ -55,6 +55,7 @@ function processTextNode(textNode){
 }
 
 function addZero(number){
+    number = parseInt(number);
     if (number < 10){
         return "0" + number;
     } else {
