@@ -15,3 +15,7 @@ Header Removal
 Signature Removal
 =================
 [Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_signature_removal.user.js)
+
+Translate Timestamps
+=================
+[Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_timestamp_translation.user.js)
