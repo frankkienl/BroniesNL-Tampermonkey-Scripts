@@ -8,6 +8,8 @@
 // @grant        none
 // ==/UserScript==
 
+// Github-link: https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_header_removal.user.js
+
 //Remove the huge header
 var headerDiv = document.getElementById('header');
 var navigationDiv = document.getElementById('navigation');
