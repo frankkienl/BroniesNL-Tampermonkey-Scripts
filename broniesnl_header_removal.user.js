@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Remove Header
 // @namespace    http://frankkie.nl/
-// @version      0.2
+// @version      0.3
 // @description  Remove the huge header.
 // @author       FrankkieNL
 // @match        http://bronies.nl/*
@@ -13,5 +13,5 @@
 //Remove the huge header
 var headerDiv = document.getElementById('header');
 var navigationDiv = document.getElementById('navigation');
-navigationDiv.style.top=0;
-headerDiv.style.height='auto';
+navigationDiv.style.top='-28px';
+headerDiv.style.height='10px';
