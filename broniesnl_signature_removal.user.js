@@ -8,6 +8,8 @@
 // @grant        none
 // ==/UserScript==
 
+// Github-link: https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_signature_removal.user.js
+
 //Signatures and stuff below avatar
 var smalls = document.getElementsByClassName('smalltext');
 for (var i=0; i<smalls.length; i++){smalls[i].style.display='none';}
