@@ -50,7 +50,7 @@ function processTextNode(textNode){
     var myDate = new Date(timeString);
     //Now we have the date, now turn it into something readable.
     //textNode.nodeValue = myDate.toLocaleString();
-    var goodTimeSting = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
+    var goodTimeString = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
     + " " + myDate.getFullYear() + " " + addZero(myDate.getHours()) + ":" + addZero(myDate.getMinutes());
     //Just replace the timestamp, don't override other text in that node.
     textNode.nodeValue = textNode.nodeValue.replace(/[A-Z][a-z][a-z]\s[A-Z][a-z][a-z]\s\d*\s\d*,\s\d\d:\d\d[A-Z][A-Z]/,goodTimeString);
