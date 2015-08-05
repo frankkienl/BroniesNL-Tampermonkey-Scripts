@@ -3,10 +3,13 @@ Tampermonkey Scripts that alter the Bronies.nl website
 
 English:
 To use these scripts, please install Tampermonkey in Chrome.
+The scripts are *not* tested in Firefox/GreaseMonkey !
 https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en 
 
 Dutch:
-Om deze scripts te gebruiken moet je Tampermonkey installeren in Chrome. https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en 
+Om deze scripts te gebruiken moet je Tampermonkey installeren in Chrome.
+Deze scripts zijn *niet* getest in Firefox/GreaseMonkey !
+https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en 
 
 Header Removal
 ==============
