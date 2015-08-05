@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Timestamp translation
 // @namespace    http://frankkie.nl/
-// @version      0.4
+// @version      0.5
 // @description  Translate timestamps on the subforum-screen
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
@@ -42,7 +42,10 @@ function processTextNode(textNode){
     if (/PM/.test(timeString)){
         //Contains 'PM', so do 'hours+12'
         var hours = parseInt(/, \d\d/.exec(timeString)[0].substr(2,2));
-        hours+=12;
+        if (hours<12){
+            //note: times like 12:05PM should not be +12-ed.
+            hours+=12;
+        }
         timeString = timeString.replace(/, \d\d/, ", " + hours);
     }
     timeString = timeString.replace(/PM/, "");
