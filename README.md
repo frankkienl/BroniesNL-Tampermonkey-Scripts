@@ -45,3 +45,8 @@ Topic Larger
 ============
 [Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_topic_larger.user.js)
 [More info](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/blob/master/README_topic_larger.md)
+
+Thread Last Page
+============
+[Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_thread_last_page.user.js)
+[More info](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/blob/master/README_thread_last_page.md)
