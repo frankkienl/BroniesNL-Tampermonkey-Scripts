@@ -6,6 +6,8 @@
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php?*
 // @grant        none
+// @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_thread_last_page.user.js
+// @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
 //find all Thread-links
