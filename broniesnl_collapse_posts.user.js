@@ -79,7 +79,7 @@ function collapsePosts(){
 function getNamesToHide(){
     var ans = [];
     var names = localStorage.getItem("namesToHide");
-    if (names === undefined || names === ""){
+    if (names == undefined || names == ""){
       return ans; //don't bother to parse when empty
     }
     //http://www.w3schools.com/jsref/jsref_split.asp
