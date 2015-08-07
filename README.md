@@ -50,3 +50,7 @@ Thread Last Page
 ============
 [Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_thread_last_page.user.js)
 [More info](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/blob/master/README_thread_last_page.md)
+
+Thread First and Last Page buttons
+============
+[Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_first_last_page_buttons.user.js)
