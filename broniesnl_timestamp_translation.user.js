@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Timestamp translation
 // @namespace    http://frankkie.nl/
-// @version      0.5
+// @version      0.6
 // @description  Translate timestamps on the subforum-screen
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
@@ -11,6 +11,8 @@
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_timestamp_translation.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
+
+var addTimeAgo = true;
 
 var dayNamesLongNL = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
 var dayNamesShortNL = ["zo", "ma","di","wo","do","vr","za"];
@@ -52,9 +54,14 @@ function processTextNode(textNode){
     timeString = timeString.replace(/AM/, "");
     var myDate = new Date(timeString);
     //Now we have the date, now turn it into something readable.
-    //textNode.nodeValue = myDate.toLocaleString();
+    
     var goodTimeString = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
     + " " + myDate.getFullYear() + " " + addZero(myDate.getHours()) + ":" + addZero(myDate.getMinutes());
+    
+    if (addTimeAgo){
+        goodTimeString += " (" + timeAgo(myDate) + ")";
+    }
+    
     //Just replace the timestamp, don't override other text in that node.
     textNode.nodeValue = textNode.nodeValue.replace(/[A-Z][a-z][a-z]\s[A-Z][a-z][a-z]\s\d*\s\d*,\s\d\d:\d\d[A-Z][A-Z]/,goodTimeString);
 }
@@ -66,4 +73,42 @@ function addZero(number){
     } else {
         return number;
     }
+}
+
+function timeAgo(date){
+    //http://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
+    var seconds = Math.floor((new Date() - date) / 1000);
+    var interval = Math.floor(seconds / 31536000);
+    if (interval > 1) {
+        return interval + " jaar geleden";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+        if (interval == 1){
+            return "1 maand geleden";
+        } else {
+            return interval + " maanden geleden";
+        }
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+        if (interval == 1){
+            return "gisteren";
+        } else {
+            return interval + " dagen geleden";
+        }
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+        return interval + " uur geleden";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+        if (interval == 1){
+            return "1 minuut geleden";
+        } else {
+            return interval + " minuten geleden";
+        }
+    }
+    return Math.floor(seconds) + " seconden geleden";
 }
