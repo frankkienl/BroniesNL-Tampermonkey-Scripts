@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Timestamp translation
 // @namespace    http://frankkie.nl/
-// @version      0.7
+// @version      0.6
 // @description  Translate timestamps on the subforum-screen
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
@@ -61,14 +61,14 @@ function processTextNode(textNode){
     timeString = timeString.replace(/AM/, "");
     var myDate = new Date(timeString);
     //Now we have the date, now turn it into something readable.
-    
+
     var goodTimeString = dayNamesShortNL[myDate.getDay()] + " " + myDate.getDate() + " " + monthNamesShortNL[myDate.getMonth()]
     + " " + myDate.getFullYear() + " " + addZero(myDate.getHours()) + ":" + addZero(myDate.getMinutes());
-    
+
     if (addTimeAgo){
         goodTimeString += " (" + timeAgo(myDate) + ")";
     }
-    
+
     //Just replace the timestamp, don't override other text in that node.
     textNode.nodeValue = textNode.nodeValue.replace(/[A-Z][a-z][a-z]\s[A-Z][a-z][a-z]\s\d*\s\d*,\s\d\d:\d\d[A-Z][A-Z]/,goodTimeString);
 }
@@ -98,12 +98,8 @@ function timeAgo(date){
         }
     }
     interval = Math.floor(seconds / 86400);
-    if (interval >= 1) {
-        if (interval == 1){
-            return "gisteren";
-        } else {
-            return interval + " dagen geleden";
-        }
+    if (interval > 1) {
+        return interval + " dagen geleden";
     }
     interval = Math.floor(seconds / 3600);
     if (interval >= 1) {
