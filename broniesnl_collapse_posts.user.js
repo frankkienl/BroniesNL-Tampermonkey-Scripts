@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Collapse Posts
 // @namespace    http://frankkie.nl/
-// @version      0.2
+// @version      0.3
 // @description  hide posts from certain members, but you have the option to view anyway.
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php?*
@@ -61,16 +61,19 @@ function collapsePosts(){
                 var postHeaderTr = allNames[i].parentElement.parentElement.parentElement;
                 //Add button to unhide the post
                 var btnHere = postHeaderTr.childNodes[3].childNodes[1].childNodes[1].childNodes[0].childNodes[3];
-                var btnNode = document.createElement("BUTTON");
-                var btnText = document.createTextNode("Show Post");
-                btnNode.appendChild(btnText);
-                btnHere.appendChild(btnNode);            
+                var btn = document.createElement('A');
+                btn.className = "tbox npbutton"; //make in same style as the other buttons
+                btn.style.textDecoration='none';
+                btn.href="#";            
+                btn.id="collapseBtn"+i;
+                btn.innerHTML="&nbsp;&nbsp;Show Post&nbsp;&nbsp;";
+                btnHere.insertBefore(btn,btnHere.firstChild);         
                 //find the next Tr, that contains the post
                 var postTr = postHeaderTr.parentElement.rows[allNames[i].parentElement.parentElement.parentElement.rowIndex+1];
                 postTr.style.display = 'none'; //hide post    
                 postTr.id = "collapsed"+i;
                 //Add behaviour to the button
-                btnNode.addEventListener('click',createFunction(i)); //http://www.w3schools.com/js/js_htmldom_eventlistener.asp
+                btn.addEventListener('click',createFunction(i)); //http://www.w3schools.com/js/js_htmldom_eventlistener.asp
             }
         }
     }
@@ -80,7 +83,7 @@ function getNamesToHide(){
     var ans = [];
     var names = localStorage.getItem("namesToHide");
     if (names == undefined || names == ""){
-      return ans; //don't bother to parse when empty
+        return ans; //don't bother to parse when empty
     }
     //http://www.w3schools.com/jsref/jsref_split.asp
     var namesArr = names.split(",");
@@ -95,7 +98,15 @@ function getNamesToHide(){
 function createFunction(i){
     //yes this is needed, see:
     //http://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simple-practical-example
-    return function(){document.getElementById("collapsed"+i).style.display = 'table-row';};
+    return function(){
+        if (/hide/i.test(document.getElementById("collapseBtn"+i).innerHTML)){ //does the button say hide or show
+            document.getElementById("collapsed"+i).style.display = 'none';
+            document.getElementById("collapseBtn"+i).innerHTML="&nbsp;&nbsp;Show Post&nbsp;&nbsp;";
+        } else {
+            document.getElementById("collapsed"+i).style.display = 'table-row';
+            document.getElementById("collapseBtn"+i).innerHTML="&nbsp;&nbsp;Hide Post&nbsp;&nbsp;";
+        }
+    };
 }
 
 function endsWith(str, suffix) {
