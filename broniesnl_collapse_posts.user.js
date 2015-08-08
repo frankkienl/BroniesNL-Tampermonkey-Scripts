@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BroniesNL - Collapse Posts
 // @namespace    http://frankkie.nl/
-// @version      0.3
+// @version      0.4
 // @description  hide posts from certain members, but you have the option to view anyway.
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php?*
@@ -64,7 +64,7 @@ function collapsePosts(){
                 var btn = document.createElement('A');
                 btn.className = "tbox npbutton"; //make in same style as the other buttons
                 btn.style.textDecoration='none';
-                btn.href="#";            
+                //btn.href="#";            
                 btn.id="collapseBtn"+i;
                 btn.innerHTML="&nbsp;&nbsp;Show Post&nbsp;&nbsp;";
                 btnHere.insertBefore(btn,btnHere.firstChild);         
