@@ -54,3 +54,7 @@ Thread Last Page
 Thread First and Last Page buttons
 ============
 [Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_first_last_page_buttons.user.js)
+
+De muur life-bar
+============
+[Install](https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_de_muur.user.js)
