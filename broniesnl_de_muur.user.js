@@ -6,6 +6,8 @@
 // @author       FrankkieNL
 // @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php?205168.0
 // @grant        none
+// @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_collapse_posts.user.js
+// @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
 // ==/UserScript==
 
 //get current hp
