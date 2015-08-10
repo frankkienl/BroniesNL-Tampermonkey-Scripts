@@ -8,6 +8,7 @@
 // @match        http://bronies.nl/usersettings.php*
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_collapse_posts.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
+// @grant        unsafeWindow
 // ==/UserScript==
 
 //Check if this is the Settings-page or Forum-page
