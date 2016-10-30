@@ -4,9 +4,9 @@
 // @version      0.6
 // @description  Translate timestamps on the subforum-screen
 // @author       FrankkieNL
-// @match        http://bronies.nl/e107_plugins/forum/forum_viewforum.php*
-// @match        http://bronies.nl/e107_plugins/forum/forum.php*
-// @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
+// @match        http*://bronies.nl/e107_plugins/forum/forum_viewforum.php*
+// @match        http*://bronies.nl/e107_plugins/forum/forum.php*
+// @match        http*://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
 // @grant        none
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_timestamp_translation.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
