@@ -4,7 +4,7 @@
 // @version      0.4
 // @description  Remove all signatures on the forum
 // @author       FrankkieNL
-// @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
+// @match        http*://bronies.nl/e107_plugins/forum/forum_viewtopic.php*
 // @grant        none
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_signature_removal.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
