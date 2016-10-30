@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  remove finfobar (bar below post)
 // @author       FrankkieNL
-// @match        http://bronies.nl/e107_plugins/forum/forum_viewtopic.php?*
+// @match        http*://bronies.nl/e107_plugins/forum/forum_viewtopic.php?*
 // @grant        none
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_finfobar_removal.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
