@@ -4,7 +4,7 @@
 // @version      0.4
 // @description  Remove the huge header.
 // @author       FrankkieNL
-// @match        http://bronies.nl/*
+// @match        http*://bronies.nl/*
 // @grant        none
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_header_removal.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
