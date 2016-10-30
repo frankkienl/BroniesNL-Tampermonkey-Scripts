@@ -4,7 +4,7 @@
 // @version      0.2
 // @description  Add first and last page buttons to thread
 // @author       FrankkieNL
-// @match        http://bronies.nl/*
+// @match        http*://bronies.nl/*
 // @grant        none
 // @downloadURL  https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/raw/master/broniesnl_first_last_page_buttons.user.js
 // @supportURL   https://github.com/frankkienl/BroniesNL-Tampermonkey-Scripts/
